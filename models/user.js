@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     favorites: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER)
+      type: DataTypes.JSON
     },
 
     totalLikes: {
