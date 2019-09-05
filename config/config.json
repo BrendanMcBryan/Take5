@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "Fusrodah1!",
+    "database": "take5_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "Fusrodah1!",
+    "database": "take5_testdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
