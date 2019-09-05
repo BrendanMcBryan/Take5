@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.ARRAY(DataTypes.INTEGER)
     },
 
-    total_likes: {
+    totalLikes: {
       type: DataTypes.INTEGER
     }
   });
