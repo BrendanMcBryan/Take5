@@ -15,6 +15,7 @@ module.exports = {
     dialect: "mysql"
   },
   production: {
+    // eslint-disable-next-line
     use_env_variable: "JAWSDB_URL",
     dialect: "mysql"
   }
