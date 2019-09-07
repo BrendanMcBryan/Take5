@@ -30,6 +30,16 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/dashboard", function(req, res) {
+    db.User.findAll({}).then(function(dbExamples) {
+      res.render("dashboard", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
