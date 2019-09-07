@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   //Load signup page
   app.get("/signup", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.User.findAll({}).then(function(dbExamples) {
       res.render("signup", {
         msg: "Welcome!",
         examples: dbExamples
@@ -22,7 +22,7 @@ module.exports = function(app) {
   });
 
   app.get("/signin", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.User.findAll({}).then(function(dbExamples) {
       res.render("signin", {
         msg: "Welcome!",
         examples: dbExamples

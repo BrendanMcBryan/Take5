@@ -10,7 +10,7 @@ var bodyParser = require('body-parser')
 var db = require("./models");
 var authRoute = require('./routes/auth.js')(app, passport);
 //load passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+require('./config/passport/passport.js')(passport, db.user);
 
 var app = express();
 var PORT = process.env.PORT || 3000;

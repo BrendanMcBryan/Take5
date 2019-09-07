@@ -49,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     status: {
-      type: DataType.ENUM("active", "inactive"),
+      type: DataTypes.ENUM("active", "inactive"),
       defaultValue: "active"
     },
     favorites: {
