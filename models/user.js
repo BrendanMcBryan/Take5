@@ -20,6 +20,9 @@ module.exports = function(sequelize, DataTypes) {
 
     totalLikes: {
       type: DataTypes.INTEGER
+    },
+    following: {
+      type: DataTypes.JSON
     }
   });
   return User;
