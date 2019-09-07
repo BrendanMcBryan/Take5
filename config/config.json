@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "Fusrodah1!",
+    "password": null,
     "database": "take5_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Fusrodah1!",
-    "database": "take5_testdb",
+    "password": null,
+    "database": "take5_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
   },
-  "production": {
+  "production": { 
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
-  }
+  } 
 }
