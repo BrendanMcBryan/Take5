@@ -8,7 +8,6 @@ var session = require('express-session')
 var bodyParser = require('body-parser')
 
 var db = require("./models");
-var authRoute = require('./routes/auth.js')(app, passport);
 //load passport strategies
 require('./config/passport/passport.js')(passport, db.user);
 
@@ -48,6 +47,8 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require('./routes/auth')(app, passport);
+
 
 var syncOptions = { force: false };
 

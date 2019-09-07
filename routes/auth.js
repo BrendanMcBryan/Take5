@@ -7,14 +7,10 @@ module.exports = function (app, passport) {
 
     app.get('/signin', passport.authenticate("local"), authController.signin);
 
-    app.post('/signup', passport.authenticate('local-signup',
-        {
-            successRedirect: '/dashboard',
-
-            failureRedirect: '/signup'
-        }
-    ), function(req, res) {
+    app.post('/signup', function (req, res) {
         db.User.create({
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
             email: req.body.email,
             password: req.body.password
         })
