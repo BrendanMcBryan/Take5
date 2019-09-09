@@ -1,8 +1,8 @@
 var db = require("../models");
-var passport = require('passport')
+// eslint-disable-next-line
+var passport = require("passport");
 
 module.exports = function(app) {
-
   // this is the post route from auth.js. For some reason it will not work unless it goes in this file(apiRoutes.js)
   app.post("/signup", function(req, res) {
     db.User.create({
@@ -21,9 +21,8 @@ module.exports = function(app) {
   app.get("/signin", function(req, res) {
     res.json(req.user);
     res.redirect(307, "/dashboard");
-    console.log("alfjaslfjs")
+    console.log("alfjaslfjs");
   });
-
 
   // app.get('/dashboard',isLoggedIn, authController.dashboard);
 
