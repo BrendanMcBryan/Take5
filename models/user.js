@@ -1,34 +1,26 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
-    firstname: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    lastname: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
+    // firstname: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1]
+    //   }
+    // },
+    // lastname: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1]
+    //   }
+    // },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      //   allowNull: false,
       validate: {
         len: [1]
       }
     },
-    about: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -49,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     status: {
-      type: DataType.ENUM("active", "inactive"),
+      type: DataTypes.ENUM("active", "inactive"),
       defaultValue: "active"
     },
     favorites: {

@@ -11,6 +11,34 @@ module.exports = function(app) {
     });
   });
 
+  //Load signup page
+  app.get("/signup", function(req, res) {
+    db.User.findAll({}).then(function(dbExamples) {
+      res.render("signup", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/signin", function(req, res) {
+    db.User.findAll({}).then(function(dbExamples) {
+      res.render("signin", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/dashboard", function(req, res) {
+    db.User.findAll({}).then(function(dbExamples) {
+      res.render("dashboard", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(
