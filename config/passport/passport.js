@@ -54,7 +54,7 @@ module.exports = function(passport, user) {
 
               lastname: req.body.lastname
             };
-
+            // eslint-disable-next-line
             User.create(data).then(function(newUser, created) {
               if (!newUser) {
                 return done(null, false);
