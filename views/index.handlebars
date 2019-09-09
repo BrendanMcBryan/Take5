@@ -1,32 +1,111 @@
 <div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>LISTICLE TOP FIVE!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar bg">
+    <a class="navbar-brand" id="navbar-header" href="#">TAKE 5</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  {{!-- jumbotron --}}
+  <div class="jumbotron jumbotron-fluid">
+    <h1 class="display-8" id="title">TAKE 5</h1>
+    <p class="lead" id="instr" >Create a top 5 list in any category and connect with people you can relate to</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg btn-info" href="#" id="log-in" role="button">Log in</a>
+    <a class="btn btn-primary btn-lg btn-info" href="#" id="sign-up" role="button">Sign up</a>
+  </div>
+  {{!-- modal for the log in button --}}
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Log in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form class="form-group">
+          <div class="modal-body">
+            <h3>User Name</h3>
+            <input type="text" class="return-user">
+            <h3>Password</h3>
+            <input type="text" class="return-user">
           </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Log in</button>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
       </div>
     </div>
   </div>
+  {{!-- pop up modal for sign up button --}}
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sign up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form class="form-group">
+          <div class="modal-body">
+            <h3>Create User Name</h3>
+            <input type="text" class="return-user">
+            <h3>Create Password</h3>
+            <input type="text" class="return-user">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-header">Most Recent Lists</div>
+          <div class="card-body">
+            <ul id="topList">
+              {{#each topLists}}
+              <h3 class="card-title" id="catgeory" data-id="{{this.category}}">Cars</h3>
+              <li>Porsche</li>
+              <li>Maserati</li>
+              <li>Aston Martin</li>
+              <li>Rolls Royce</li>
+              <li>Ferrari</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card text-center bg-info">
+          <div class="card-header">
+            Categories
+          </div>
+          <div class="card-body">
+            <span class="badge badge-pill badge-primary">SONGS</span>
+            <span class="badge badge-pill badge-secondary">TV SHOWS</span>
+            <span class="badge badge-pill badge-success">BANDS</span>
+            <span class="badge badge-pill badge-danger">CARS</span>
+            <span class="badge badge-pill badge-warning">BEERS</span>
+            <span class="badge badge-pill badge-info">BOOKS</span>
+            <span class="badge badge-pill badge-light">MOVIES</span>
+            <span class="badge badge-pill badge-dark">LIVE SETS</span>
+            <span class="badge badge-pill badge-primary">ARTISTS</span>
+            <span class="badge badge-pill badge-secondary">COLORS</span>
+            <span class="badge badge-pill badge-success">WEBSITES</span>
+            <span class="badge badge-pill badge-danger">ANYTHING!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
