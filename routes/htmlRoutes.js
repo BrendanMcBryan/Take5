@@ -10,6 +10,13 @@ module.exports = function(app) {
     res.render("index");
   });
 
+<<<<<<< HEAD
+=======
+<<<<<<< branchthree
+  // TODO original route
+=======
+  //Load signup page
+>>>>>>> e61a80610edcbfcc743b7998e16c21ce9a7a86e0
   app.get("/signup", function(req, res) {
     if (req.user) {
       res.redirect("/dashboard");
@@ -30,6 +37,7 @@ module.exports = function(app) {
     res.render("dashboard");
   });
 
+<<<<<<< HEAD
   // Load index page
   // app.get("/", function(req, res) {
   //   db.Example.findAll({}).then(function(dbExamples) {
@@ -68,6 +76,9 @@ module.exports = function(app) {
   //   });
   // });
 
+=======
+>>>>>>> master
+>>>>>>> e61a80610edcbfcc743b7998e16c21ce9a7a86e0
   // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
   //   db.Example.findOne({ where: { id: req.params.id } }).then(function(
@@ -78,6 +89,13 @@ module.exports = function(app) {
   //     });
   //   });
   // });
+<<<<<<< HEAD
+=======
+
+  app.get("/dashboard", function(req, res) {
+    res.render("profile");
+  });
+>>>>>>> e61a80610edcbfcc743b7998e16c21ce9a7a86e0
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
