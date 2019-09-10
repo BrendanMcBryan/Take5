@@ -28,6 +28,7 @@ module.exports = function(app, passport) {
   );
 
   function isLoggedIn(req, res, next) {
+    //eslint-disable-next-line
     if (req.isAuthenticated()) return next();
 
     res.redirect("/signin");

@@ -1,12 +1,12 @@
-var express = require("express");
+// var express = require("express");
 
-var router = express.Router();
+// var router = express.Router();
 
-var passport = require("../config/passport/passport");
+// var passport = require("../config/passport/passport");
 
-router.get("/signin", function(req, res) {
-    res.render("signin", data);
-});
+// router.get("/signin", function(req, res) {
+//   res.render("signin", data);
+// });
 
 // var exports = (module.exports = {});
 
