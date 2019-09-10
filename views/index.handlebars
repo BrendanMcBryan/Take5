@@ -8,7 +8,7 @@
     </button>
   </nav>
   {{!-- jumbotron --}}
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid" id="home-jumbo">
     <h1 class="display-8" id="title">TAKE 5</h1>
     <p class="lead" id="instr" >Create a top 5 list in any category and connect with people you can relate to</p>
     <hr class="my-4">
@@ -16,7 +16,7 @@
     <a class="btn btn-primary btn-lg btn-info" href="#" id="sign-up" role="button">Sign up</a>
   </div>
   {{!-- modal for the log in button --}}
-  <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal" id="modelWindow" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -40,7 +40,7 @@
     </div>
   </div>
   {{!-- pop up modal for sign up button --}}
-  <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal" id="modelSign" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -66,7 +66,7 @@
   <div class="container">
     <div class="row">
       <div class="col-6">
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+        <div class="card text-white bg-info mb-3" style="max-width: 30rem;">
           <div class="card-header">Most Recent Lists</div>
           <div class="card-body">
             <ul id="topList">
@@ -99,6 +99,8 @@
             <span class="badge badge-pill badge-primary">ARTISTS</span>
             <span class="badge badge-pill badge-secondary">COLORS</span>
             <span class="badge badge-pill badge-success">WEBSITES</span>
+            <span class="badge badge-pill badge-warning">SPORTS</span>
+            <span class="badge badge-pill badge-light">ATHLETES</span>
             <span class="badge badge-pill badge-danger">ANYTHING!</span>
           </div>
         </div>
@@ -108,5 +110,16 @@
 </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+{{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+{{!-- <script src="/js/index.js"></script> --}}
+<script type="text/javascript">
+  $("#log-in").on("click", function() {
+
+    $("#modelWindow").modal("show");
+  });
+
+  $("#sign-up").click(function() {
+  
+    $("#modelSign").modal("show");
+  })
+</script>
