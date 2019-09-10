@@ -1,48 +1,77 @@
-var db = require("../models");
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/isAuthenticated");
 
 module.exports = function(app) {
-  // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/dashboard");
+    }
+    res.render("index");
   });
 
-<<<<<<< branchthree
   // TODO original route
-=======
+
   //Load signup page
+
   app.get("/signup", function(req, res) {
-    db.User.findAll({}).then(function(dbExamples) {
-      res.render("signup", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    if (req.user) {
+      res.redirect("/dashboard");
+    }
+    res.render("signup");
   });
 
   app.get("/signin", function(req, res) {
-    db.User.findAll({}).then(function(dbExamples) {
-      res.render("signin", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    if (req.user) {
+      res.redirect("/dashboard");
+    }
+    res.render("signin");
   });
 
-  app.get("/dashboard", function(req, res) {
-    db.User.findAll({}).then(function(dbExamples) {
-      res.render("dashboard", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get("/dashboard", isAuthenticated, function(req, res) {
+    res.render("dashboard");
   });
 
->>>>>>> master
+  // Load index page
+  // app.get("/", function(req, res) {
+  //   db.Example.findAll({}).then(function(dbExamples) {
+  //     res.render("index", {
+  //       msg: "Welcome!",
+  //       examples: dbExamples
+  //     });
+  //   });
+  // });
+
+  //Load signup page
+  // app.get("/signup", function(req, res) {
+  //   db.User.findAll({}).then(function(dbExamples) {
+  //     res.render("signup", {
+  //       msg: "Welcome!",
+  //       examples: dbExamples
+  //     });
+  //   });
+  // });
+
+  // app.get("/signin", function(req, res) {
+  //   db.User.findAll({}).then(function(dbExamples) {
+  //     res.render("signin", {
+  //       msg: "Welcome!",
+  //       examples: dbExamples
+  //     });
+  //   });
+  // });
+
+  // app.get("/dashboard", function(req, res) {
+  //   db.User.findAll({}).then(function(dbExamples) {
+  //     res.render("dashboard", {
+  //       msg: "Welcome!",
+  //       examples: dbExamples
+  //     });
+  //   });
+  // });
+
   // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
   //   db.Example.findOne({ where: { id: req.params.id } }).then(function(
