@@ -34,7 +34,6 @@ module.exports = function(app) {
     res.render("dashboard");
   });
 
-
   // Load index page
   // app.get("/", function(req, res) {
   //   db.Example.findAll({}).then(function(dbExamples) {
