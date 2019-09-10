@@ -10,6 +10,10 @@ module.exports = function(app) {
     res.render("index");
   });
 
+  // TODO original route
+
+  //Load signup page
+
   app.get("/signup", function(req, res) {
     if (req.user) {
       res.redirect("/dashboard");
@@ -29,6 +33,7 @@ module.exports = function(app) {
   app.get("/dashboard", isAuthenticated, function(req, res) {
     res.render("dashboard");
   });
+
 
   // Load index page
   // app.get("/", function(req, res) {
@@ -78,6 +83,11 @@ module.exports = function(app) {
   //     });
   //   });
   // });
+
+
+  app.get("/dashboard", function(req, res) {
+    res.render("profile");
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
