@@ -14,7 +14,7 @@
     "dialect": "mysql",
     "logging": false
   },
-  "production": { // eslint-disable-next-line
+  "production": { 
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   } 
