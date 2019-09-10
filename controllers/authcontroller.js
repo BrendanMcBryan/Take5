@@ -1,19 +1,32 @@
-var exports = (module.exports = {});
+var express = require("express");
 
-exports.signup = function(req, res) {
-  res.render("signup");
-};
+var router = express.Router();
 
-exports.signin = function(req, res) {
-  res.render("signin");
-};
+var passport = require("../config/passport/passport");
 
-exports.dashboard = function(req, res) {
-  res.render("dashboard");
-};
+router.get("/signin", function(req, res) {
+    res.render("signin", data);
+});
 
-exports.logout = function(req, res) {
-  req.session.destroy(function(err) {
-    res.redirect("/");
-  });
-};
+// var exports = (module.exports = {});
+
+// exports.signup = function(req, res) {
+//   res.render("signup");
+// };
+
+// exports.signin = function(req, res) {
+//   res.render("signin");
+// };
+
+// exports.dashboard = function(req, res) {
+//   res.render("dashboard");
+// };
+
+// exports.logout = function(req, res) {
+//   req.session.destroy(function(err) {
+//     res.redirect("/");
+//   });
+// };
+
+// Export routes for server.js to use.
+module.exports = router;
