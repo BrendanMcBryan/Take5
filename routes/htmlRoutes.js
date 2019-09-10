@@ -1,6 +1,10 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  // app.post("/signin", (req, res) => {
+  //   console.log("lfjaiefja");
+  // });
+
   // Load index page
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {

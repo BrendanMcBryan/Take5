@@ -8,6 +8,9 @@ var session = require("express-session");
 var bodyParser = require("body-parser");
 
 var db = require("./models");
+// var users = require("./models/user.js");
+// console.log(db.user)
+// console.log(typeof models);
 //load passport strategies
 require("./config/passport/passport.js")(passport, db.user);
 
@@ -38,6 +41,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+// app.use(flash());
+// require("./config/passport/passport")(passport)
+
 // Handlebars
 app.engine(
   "handlebars",
@@ -48,9 +54,9 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app, passport);
+require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-// require('./routes/auth')(app, passport);
+var authroute = require("./routes/auth")(app, passport);
 
 var syncOptions = { force: false };
 
