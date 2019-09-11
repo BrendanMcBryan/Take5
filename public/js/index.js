@@ -10,7 +10,7 @@ var $thing5 = $("#thing5");
 
 var $submitBtn = $("#submitNew5");
 
-var $exampleList = $("#example-list");
+// var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -113,7 +113,6 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-
   // $category.val("hey there");
   $thing1.val("");
   $thing2.val("");
@@ -124,15 +123,15 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+// var handleDeleteBtnClick = function() {
+//   var idToDelete = $(this)
+//     .parent()
+//     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
+//   API.deleteExample(idToDelete).then(function() {
+//     refreshExamples();
+//   });
+// };
 
 var handleLogIn = function() {
   return $.ajax({
