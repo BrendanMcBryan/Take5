@@ -1,36 +1,38 @@
-var authController = require("../controllers/authcontroller.js");
+// ! NO longer need this file - COdy & Brendan 2019.09.11.
 
-module.exports = function(app, passport) {
-  app.get("/signup", authController.signup);
+// var authController = require("../controllers/authcontroller.js");
 
-  app.get("/signin", authController.signin);
+// module.exports = function(app, passport) {
+//   app.get("/signup", authController.signup);
 
-  app.post(
-    "/signup",
-    passport.authenticate("local-signup", {
-      successRedirect: "/dashboard",
+//   app.get("/signin", authController.signin);
 
-      failureRedirect: "/signup"
-    })
-  );
+//   app.post(
+//     "/signup",
+//     passport.authenticate("local-signup", {
+//       successRedirect: "/dashboard",
 
-  app.get("/dashboard", isLoggedIn, authController.dashboard);
+//       failureRedirect: "/signup"
+//     })
+//   );
 
-  app.get("/logout", authController.logout);
+//   app.get("/dashboard", isLoggedIn, authController.dashboard);
 
-  app.post(
-    "/signin",
-    passport.authenticate("local-signin", {
-      successRedirect: "/dashboard",
+//   app.get("/logout", authController.logout);
 
-      failureRedirect: "/signin"
-    })
-  );
+//   app.post(
+//     "/signin",
+//     passport.authenticate("local-signin", {
+//       successRedirect: "/dashboard",
 
-  function isLoggedIn(req, res, next) {
-    //eslint-disable-next-line
-    if (req.isAuthenticated()) return next();
+//       failureRedirect: "/signin"
+//     })
+//   );
 
-    res.redirect("/signin");
-  }
-};
+//   function isLoggedIn(req, res, next) {
+//     //eslint-disable-next-line
+//     if (req.isAuthenticated()) return next();
+
+//     res.redirect("/signin");
+//   }
+// };

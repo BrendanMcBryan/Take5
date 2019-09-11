@@ -1,32 +1,34 @@
-// var express = require("express");
+// ! NO longer need this file - COdy & Brendan 2019.09.11.
 
-// var router = express.Router();
+// // var express = require("express");
 
-// var passport = require("../config/passport/passport");
+// // var router = express.Router();
 
-// router.get("/signin", function(req, res) {
-//   res.render("signin", data);
-// });
+// // var passport = require("../config/passport/passport");
 
-// var exports = (module.exports = {});
+// // router.get("/signin", function(req, res) {
+// //   res.render("signin", data);
+// // });
 
-// exports.signup = function(req, res) {
-//   res.render("signup");
-// };
+// // var exports = (module.exports = {});
 
-// exports.signin = function(req, res) {
-//   res.render("signin");
-// };
+// // exports.signup = function(req, res) {
+// //   res.render("signup");
+// // };
 
-// exports.dashboard = function(req, res) {
-//   res.render("dashboard");
-// };
+// // exports.signin = function(req, res) {
+// //   res.render("signin");
+// // };
 
-// exports.logout = function(req, res) {
-//   req.session.destroy(function(err) {
-//     res.redirect("/");
-//   });
-// };
+// // exports.dashboard = function(req, res) {
+// //   res.render("dashboard");
+// // };
 
-// Export routes for server.js to use.
-module.exports = router;
+// // exports.logout = function(req, res) {
+// //   req.session.destroy(function(err) {
+// //     res.redirect("/");
+// //   });
+// // };
+
+// // Export routes for server.js to use.
+// module.exports = router;

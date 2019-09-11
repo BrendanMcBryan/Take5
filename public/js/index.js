@@ -1,12 +1,14 @@
 // Get references to page elements
+var $loginBTN = $("#signin-btn");
+
 var $category = $("#category");
 var $thing1 = $("#thing1");
 var $thing2 = $("#thing2");
-// var $thing3 = $("#thing3");
-// var $thing4 = $("#thing4");
-// var $thing5 = $("#thing5");
+var $thing3 = $("#thing3");
+var $thing4 = $("#thing4");
+var $thing5 = $("#thing5");
 
-var $submitBtn = $("submit");
+var $submitBtn = $("#submitNew5");
 
 var $exampleList = $("#example-list");
 
@@ -23,7 +25,7 @@ var API = {
     });
   },
   getThings: function() {
-    return $.ajax({ 
+    return $.ajax({
       url: "api/things",
       type: "GET"
     });
@@ -75,17 +77,49 @@ var handleFormSubmit = function(event) {
     category: $category.val().trim(),
     thing: $thing2.val().trim()
   };
-
   API.saveThing(thingOne).then(function() {
     refreshExamples();
   });
 
+  var thingTwo = {
+    category: $category.val().trim(),
+    thing: $thing2.val().trim()
+  };
+  API.saveThing(thingTwo).then(function() {
+    refreshExamples();
+  });
+
+  var thingThree = {
+    category: $category.val().trim(),
+    thing: $thing2.val().trim()
+  };
+  API.saveThing(thingThree).then(function() {
+    refreshExamples();
+  });
+
+  var thingFour = {
+    category: $category.val().trim(),
+    thing: $thing2.val().trim()
+  };
+  API.saveThing(thingFour).then(function() {
+    refreshExamples();
+  });
+
+  var thingFive = {
+    category: $category.val().trim(),
+    thing: $thing2.val().trim()
+  };
+  API.saveThing(thingFive).then(function() {
+    refreshExamples();
+  });
+
+
   // $category.val("hey there");
   $thing1.val("");
-  // $thing2.val("");
-  // $thing3.val("");
-  // $thing4.val("");
-  // $thing5.val("");
+  $thing2.val("");
+  $thing3.val("");
+  $thing4.val("");
+  $thing5.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -100,7 +134,16 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+var handleLogIn = function() {
+  return $.ajax({
+    url: "/dashboard",
+    type: "GET"
+  });
+};
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
+
+$loginBTN.on("click", handleLogIn);
 // console.log("hello");
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
