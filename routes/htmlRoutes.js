@@ -31,7 +31,8 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/dashboard", isAuthenticated, function(req, res) {
-    res.render("profile");
+    res.render("profile", req.user);
+    console.log(req.user);
   });
 
   // Load index page
