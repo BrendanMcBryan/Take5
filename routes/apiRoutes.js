@@ -35,18 +35,22 @@ module.exports = function(app) {
   });
 
   // Get all examples
-  // app.get("/api/examples", function(req, res) {
-  //   db.User.findAll({}).then(function(dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
+  app.get("/api/things", function(req, res) {
+    db.Thing.findAll({}).then(function(dbExamples) {
+      res.json(dbExamples);
+    });
+  });
 
-  // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.User.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
+  // Create a new things
+  app.post("/api/things", function(req, res) {
+    db.Thing.create({
+      category: req.body.category,
+      thing: req.body.thing
+    }).then(function(dbthing) {
+      res.json(dbthing);
+      console.log(dbthing);
+    });
+  });
 
   // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
