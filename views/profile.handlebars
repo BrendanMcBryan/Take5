@@ -63,11 +63,36 @@
                 <div class="card text-white bg-info">
                     <h2 class="card-header">Favorites</h2>
                     <div class="card-body">
-                        <p>Users favorites</p>
-                        <ul id="topList">
-                            {{#each favorites}}
-                            {{/each}}
-                        </ul>
+                        <div class="row">
+                            <div class="col-12" id="favsCol">
+                                <div class="card text-dark">
+                                    <h4 class="card-header text-dark">Cars</h4>
+                                    <div class="card-body">Honda•Prius•Camero•Ferrari•Van</div>
+                                </div>
+                                <hr>
+                                <div class="card text-dark">
+                                    <h4 class="card-header text-dark">Colors</h4>
+                                    <div class="card-body">Green•Red•Chartruese•Yellow•Pantone 292</div>
+                                </div>
+                                <hr>
+                                <div class="card text-dark">
+                                    <h4 class="card-header text-dark">Spices</h4>
+                                    <div class="card-body">Pepper•Paprika•Cayanne•Black•Curry</div>
+                                </div>
+                                <hr>
+                                <div class="card text-dark">
+                                    <h4 class="card-header text-dark">TV Shows</h4>
+                                    <div class="card-body">The Simpsons•Alf•ER•Hunter•Aeon Flux</div>
+                                </div>
+
+                                <ul id="topList">
+                                    {{#each favorites}}
+                                    {{/each}}
+                                </ul>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,10 +100,28 @@
             <div class="col-4">
                 <div class="card text-white bg-info">
                     <h2 class="card-header">
-                        Following
-                    </h2>
+                        Following </h2>
                     <div class="card-body">
-                        <span>Users following</span>
+                        <div class="row">
+                            <div class="col-12" id="followCol">
+                                <div class="card text-dark">
+                                    <h4 class="card-header bg-warning text-dark">Cody</h4>
+                                </div>
+                                <hr>
+                                <div class="card text-dark">
+                                    <h4 class="card-header bg-warning text-dark">Stephanie</h4>
+                                </div>
+                                <hr>
+                                <div class="card text-dark">
+                                    <h4 class="card-header bg-warning text-dark">David</h4>
+                                </div>
+                                <hr>
+                                <div class="card text-dark">
+                                    <h4 class="card-header bg-warning text-dark">Jesus</h4>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
