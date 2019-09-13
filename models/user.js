@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     favorites: {
       type: DataTypes.JSON,
-      defaultValue: "1"
+      defaultValue: [0]
     },
 
     totalLikes: {

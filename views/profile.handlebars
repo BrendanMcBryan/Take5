@@ -60,13 +60,14 @@
 
 
             <div class="col-4">
-                <div class="card text-white bg-info">
+                <div class="card text-white bg-primary">
                     <h2 class="card-header">Favorites</h2>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12" id="favsCol">
                                 <div class="card text-dark">
                                     <h4 class="card-header text-dark">Cars</h4>
+                                    <div class="card-body">{{favorites.[1]}}</div>
                                     <div class="card-body">Honda•Prius•Camero•Ferrari•Van</div>
                                 </div>
                                 <hr>
@@ -87,6 +88,7 @@
 
                                 <ul id="topList">
                                     {{#each favorites}}
+                                    {{> lists/list-block}}
                                     {{/each}}
                                 </ul>
 
@@ -98,7 +100,7 @@
             </div>
 
             <div class="col-4">
-                <div class="card text-white bg-info">
+                <div class="card text-white bg-success">
                     <h2 class="card-header">
                         Following </h2>
                     <div class="card-body">
