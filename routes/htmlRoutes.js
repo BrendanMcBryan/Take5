@@ -32,46 +32,9 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/dashboard", isAuthenticated, function(req, res) {
     res.render("profile", req.user);
+
     console.log(req.user);
   });
-
-  // Load index page
-  // app.get("/", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
-  //     res.render("index", {
-  //       msg: "Welcome!",
-  //       examples: dbExamples
-  //     });
-  //   });
-  // });
-
-  //Load signup page
-  // app.get("/signup", function(req, res) {
-  //   db.User.findAll({}).then(function(dbExamples) {
-  //     res.render("signup", {
-  //       msg: "Welcome!",
-  //       examples: dbExamples
-  //     });
-  //   });
-  // });
-
-  // app.get("/signin", function(req, res) {
-  //   db.User.findAll({}).then(function(dbExamples) {
-  //     res.render("signin", {
-  //       msg: "Welcome!",
-  //       examples: dbExamples
-  //     });
-  //   });
-  // });
-
-  // app.get("/dashboard", function(req, res) {
-  //   db.User.findAll({}).then(function(dbExamples) {
-  //     res.render("dashboard", {
-  //       msg: "Welcome!",
-  //       examples: dbExamples
-  //     });
-  //   });
-  // });
 
   // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
@@ -84,9 +47,9 @@ module.exports = function(app) {
   //   });
   // });
 
-  app.get("/dashboard", function(req, res) {
-    res.render("profile");
-  });
+  // app.get("/dashboard", function(req, res) {
+  //   res.render("profile");
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

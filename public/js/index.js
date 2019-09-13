@@ -9,12 +9,13 @@ var $thing4 = $("#thing4");
 var $thing5 = $("#thing5");
 
 var $submitBtn = $("#submitNew5");
-
-// var $exampleList = $("#example-list");
+// var $userID = $("#userNum");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveThing: function(thing) {
+    setTimeout(function() {}, 5000);
+
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -24,12 +25,23 @@ var API = {
       data: JSON.stringify(thing)
     });
   },
+  logUserFaves: function(userPicks) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "/api/userfavs",
+      data: JSON.stringify(userPicks)
+    });
+  },
   getThings: function() {
     return $.ajax({
       url: "api/things",
       type: "GET"
     });
   },
+
   deleteExample: function(id) {
     return $.ajax({
       url: "api/things/" + id,
@@ -70,50 +82,49 @@ var API = {
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
-  console.log("form submitted");
   event.preventDefault();
+  // TODO DRY This section
+  // cylce through and log things to Things DBalso park number in user table.
+
+  var userspan = document.getElementById("userNum");
+  var userserial = parseInt(userspan.textContent);
 
   var thingOne = {
+    usernumber: userserial,
     category: $category.val().trim(),
-    thing: $thing2.val().trim()
+    thing: $thing1.val().trim()
   };
-  API.saveThing(thingOne).then(function() {
-    refreshExamples();
-  });
+  API.saveThing(thingOne).then(function() {});
 
   var thingTwo = {
+    usernumber: userserial,
     category: $category.val().trim(),
     thing: $thing2.val().trim()
   };
-  API.saveThing(thingTwo).then(function() {
-    refreshExamples();
-  });
+  API.saveThing(thingTwo).then(function() {});
 
   var thingThree = {
+    usernumber: userserial,
     category: $category.val().trim(),
-    thing: $thing2.val().trim()
+    thing: $thing3.val().trim()
   };
-  API.saveThing(thingThree).then(function() {
-    refreshExamples();
-  });
+  API.saveThing(thingThree).then(function() {});
 
   var thingFour = {
+    usernumber: userserial,
     category: $category.val().trim(),
-    thing: $thing2.val().trim()
+    thing: $thing4.val().trim()
   };
-  API.saveThing(thingFour).then(function() {
-    refreshExamples();
-  });
+  API.saveThing(thingFour).then(function() {});
 
   var thingFive = {
+    usernumber: userserial,
     category: $category.val().trim(),
-    thing: $thing2.val().trim()
+    thing: $thing5.val().trim()
   };
-  API.saveThing(thingFive).then(function() {
-    refreshExamples();
-  });
+  API.saveThing(thingFive).then(function() {});
 
-  // $category.val("hey there");
+  $category.val("");
   $thing1.val("");
   $thing2.val("");
   $thing3.val("");
