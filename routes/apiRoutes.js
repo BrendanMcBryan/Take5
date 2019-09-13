@@ -35,27 +35,50 @@ module.exports = function(app) {
   });
 
   // Get all examples
-  app.get("/api/things", function(req, res) {
-    db.Thing.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
-  });
+  // app.get("/api/things", function(req, res) {
+  //   db.Thing.findAll({}).then(function(dbExamples) {
+  //     res.json(dbExamples);
+  //   });
+  // });
+
+  // log User favorites
+  app.post("/api/userfavs", function(req, res) {});
 
   // Create a new things
+  // This doozy does the work of logging all the table data. The things are logged to the thing table, and the user's favorites data is adjusted. 
   app.post("/api/things", function(req, res) {
     db.Thing.create({
       category: req.body.category,
       thing: req.body.thing
     }).then(function(dbthing) {
-      res.json(dbthing);
-      console.log(dbthing);
+      console.log("thing ID Below");
+      console.log(dbthing.id);
+      db.User.findOne({ where: { id: req.body.usernumber } }).then(function(
+        result
+      ) {
+        console.log("Result Below");
+        var curFavs = [];
+        curFavs.push(result.favorites);
+        curFavs.push(dbthing.id);
+        console.log(curFavs);
+        console.log("cur favs again");
+        console.log(curFavs);
+
+        db.User.update(
+          {
+            favorites: curFavs
+          },
+          {
+            where: {
+              id: result.id
+            }
+          }
+        ).then(function(dbu) {
+          res.json(dbu);
+        });
+      });
+
+      // console.log(dbthing);
     });
   });
-
-  // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.User.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
 };
