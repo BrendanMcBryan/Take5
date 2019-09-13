@@ -9,7 +9,7 @@ var $thing4 = $("#thing4");
 var $thing5 = $("#thing5");
 
 var $submitBtn = $("#submitNew5");
-var $userID = $("#userNum");
+// var $userID = $("#userNum");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -32,7 +32,6 @@ var API = {
       url: "/api/userfavs",
       data: JSON.stringify(userPicks)
     });
-
   },
   getThings: function() {
     return $.ajax({

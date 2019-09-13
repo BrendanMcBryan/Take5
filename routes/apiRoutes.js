@@ -34,18 +34,10 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  // Get all examples
-  // app.get("/api/things", function(req, res) {
-  //   db.Thing.findAll({}).then(function(dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
-
-  // log User favorites
-  app.post("/api/userfavs", function(req, res) {});
-
   // Create a new things
-  // This doozy does the work of logging all the table data. The things are logged to the thing table, and the user's favorites data is adjusted. 
+  // This doozy does the work of logging all the table data.
+  // The things are logged to the thing table,
+  // and the user's favorites data is adjusted.
   app.post("/api/things", function(req, res) {
     db.Thing.create({
       category: req.body.category,
