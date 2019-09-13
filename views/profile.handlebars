@@ -15,69 +15,86 @@
         </div>
     </nav>
     {{!-- jumbotron --}}
-    <div class="jumbotron bg-info" id="profile-jumbo">
-        <h1 class="display-8" id="list-form">New Top 5 List</h1>
-        <hr class="my-4">
-        <form action="" id="form-list">
-            <ul>
-                <li>
-                    <p>Category</p>
-                    <input type="text" id="category">
-                </li>
-                <li>
-                    <p>Number 1</p>
-                    <input type="text" id="thing1">
-                </li>
-                <p>Number 2</p>
-                <input type="text" id="thing2">
-                </li>
-                <p>Number 3</p>
-                <input type="text" id="thing3">
-                </li>
-                <p>Number 4</p>
-                <input type="text" id="thing4">
-                </li>
-                <p>Number 5</p>
-                <input type="text" id="thing5">
-                </li>
-            </ul>
-            <button id="submitNew5" type="submit">Submit</button>
-        </form>
 
-    </div>
-
-    <div class="container">
+    <div class="container" style="padding-top: 2rem">
         <div class="row">
-            <div class="col-6">
-                <div class="card text-white bg-info mb-3" style="max-width: 30rem;">
-                    <div class="card-header">Favorites</div>
+            <div class="col-4">
+                <div class="card text-white bg-danger">
+                    <h2 class="card-header" id="list-form">New Top 5 List</h2>
+                    <div class="card-body">
+                        <form action="" id="form-list">
+
+                            <div class="card">
+                                <div class="card-header bg-warning">Category
+                                    <input type="text" id="category"></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Favorite 1</h5>
+                                <input type="text" id="thing1">
+                                <hr>
+                                <h5 class="card-title">Favorite 2</h5>
+                                <input type="text" id="thing2">
+                                <hr>
+                                <h5 class="card-title">Favorite 3</h5>
+                                <input type="text" id="thing3">
+                                <hr>
+                                <h5 class="card-title">Favorite 4</h5>
+                                <input type="text" id="thing4">
+                                <hr>
+                                <h5 class="card-title">Favorite 5</h5>
+                                <input type="text" id="thing5">
+                                <hr>
+                                <button id="submitNew5" type="submit">Submit</button>
+                            </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+                </form>
+            </div>
+
+
+
+            <div class="col-4">
+                <div class="card text-white bg-info">
+                    <h2 class="card-header">Favorites</h2>
                     <div class="card-body">
                         <p>Users favorites</p>
                         <ul id="topList">
-                            {{#each topLists}}
-                            <h3 class="card-title" id="catgeory" data-id="{{this.category}}">Cars</h3>
-                            <li>Porsche</li>
-                            <li>Maserati</li>
-                            <li>Aston Martin</li>
-                            <li>Rolls Royce</li>
-                            <li>Ferrari</li>
+                            {{#each favorites}}
                             {{/each}}
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="card text-center bg-info">
-                    <div class="card-header">
+
+            <div class="col-4">
+                <div class="card text-white bg-info">
+                    <h2 class="card-header">
                         Following
-                    </div>
+                    </h2>
                     <div class="card-body">
                         <span>Users following</span>
                     </div>
                 </div>
+
             </div>
+
+
+
+
+
         </div>
+
+
+
     </div>
+
+
 </div>
 </div>
 
