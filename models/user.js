@@ -34,7 +34,8 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "active"
     },
     favorites: {
-      type: DataTypes.JSON
+      type: DataTypes.JSON,
+      defaultValue: "1"
     },
 
     totalLikes: {

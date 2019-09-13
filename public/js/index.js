@@ -14,6 +14,8 @@ var $submitBtn = $("#submitNew5");
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveThing: function(thing) {
+    setTimeout(function() {}, 5000);
+
     return $.ajax({
       headers: {
         "Content-Type": "application/json"

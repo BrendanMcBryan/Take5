@@ -1,5 +1,6 @@
 var db = require("../models");
 // var authController = require("../controllers/authcontroller");
+
 // eslint-disable-next-line
 var passport = require("../config/passport/passport");
 
@@ -34,7 +35,7 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  // Create a new things
+  // ? Create a new things
   // This doozy does the work of logging all the table data.
   // The things are logged to the thing table,
   // and the user's favorites data is adjusted.
@@ -50,11 +51,11 @@ module.exports = function(app) {
       ) {
         console.log("Result Below");
         var curFavs = [];
-        curFavs.push(result.favorites);
+        var curFavs = result.favorites;
         curFavs.push(dbthing.id);
+
         console.log(curFavs);
-        console.log("cur favs again");
-        console.log(curFavs);
+        setTimeout(function() {}, 5000);
 
         db.User.update(
           {
