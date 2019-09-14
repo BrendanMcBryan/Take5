@@ -1,6 +1,5 @@
 var db = require("../models");
 // var authController = require("../controllers/authcontroller");
-
 // eslint-disable-next-line
 var passport = require("../config/passport/passport");
 
@@ -35,43 +34,33 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  // ? Create a new things
-  // This doozy does the work of logging all the table data.
-  // The things are logged to the thing table,
-  // and the user's favorites data is adjusted.
+  // Get all things
+  app.get("/api/things", function(req, res) {
+    db.Thing.findAll({}).then(function(dbExamples) {
+      res.json(dbExamples);
+    });
+  });
+  // Get all things
+  app.get("/api/uthings", function(req, res) {
+    db.Thing.findAll({}).then(function(dbExamples) {
+      res.json(dbExamples);
+    });
+  });
+  // Create a new things
   app.post("/api/things", function(req, res) {
     db.Thing.create({
       category: req.body.category,
       thing: req.body.thing
     }).then(function(dbthing) {
-      console.log("thing ID Below");
-      console.log(dbthing.id);
-      db.User.findOne({ where: { id: req.body.usernumber } }).then(function(
-        result
-      ) {
-        console.log("Result Below");
-        var curFavs = [];
-        var curFavs = result.favorites;
-        curFavs.push(dbthing.id);
-
-        console.log(curFavs);
-        setTimeout(function() {}, 5000);
-
-        db.User.update(
-          {
-            favorites: curFavs
-          },
-          {
-            where: {
-              id: result.id
-            }
-          }
-        ).then(function(dbu) {
-          res.json(dbu);
-        });
-      });
-
-      // console.log(dbthing);
+      res.json(dbthing);
+      console.log(dbthing);
     });
   });
+
+  // Delete an example by id
+  // app.delete("/api/examples/:id", function(req, res) {
+  //   db.User.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+  //     res.json(dbExample);
+  //   });
+  // });
 };
