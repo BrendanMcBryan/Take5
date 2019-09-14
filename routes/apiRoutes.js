@@ -34,14 +34,13 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  
-  // Get all things 
+  // Get all things
   app.get("/api/things", function(req, res) {
     db.Thing.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
     });
   });
-  // Get all things 
+  // Get all things
   app.get("/api/uthings", function(req, res) {
     db.Thing.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
