@@ -10,7 +10,7 @@
   {{!-- jumbotron --}}
   <div class="jumbotron jumbotron-fluid" id="home-jumbo">
     <h1 class="display-8" id="title">TAKE 5</h1>
-    <p class="lead" id="instr" >Create a top 5 list in any category and connect with people you can relate to</p>
+    <p class="lead" id="instr">Create a top 5 list in any category and connect with people you can relate to</p>
     <hr class="my-4">
     <a class="btn btn-primary btn-lg btn-info" href="/signin" id="log-in" role="button">Log in</a>
     <a class="btn btn-primary btn-lg btn-info" href="/signup" id="sign-up" role="button">Sign up</a>
@@ -68,17 +68,10 @@
       <div class="col-6">
         <div class="card text-white bg-info mb-3" style="max-width: 30rem;">
           <div class="card-header">Most Recent Lists</div>
-          <div class="card-body">
-            <ul id="topList">
-              {{#each topLists}}
-              <h3 class="card-title" id="catgeory" data-id="{{this.category}}">Cars</h3>
-              <li>Porsche</li>
-              <li>Maserati</li>
-              <li>Aston Martin</li>
-              <li>Rolls Royce</li>
-              <li>Ferrari</li>
-              {{/each}}
-            </ul>
+          <div class="card text-dark">
+
+            <h4 class="card-header text-dark">Songs</h4>
+            <div class="card-body">Hey Jude•Beat It•Low•Aud Lang Syne•Message in a Bottle</div>
           </div>
         </div>
       </div>
@@ -113,13 +106,13 @@
 {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
 {{!-- <script src="/js/index.js"></script> --}}
 <script type="text/javascript">
-  $("#log-in").on("click", function() {
+  $("#log-in").on("click", function () {
 
     $("#modelWindow").modal("show");
   });
 
-  $("#sign-up").click(function() {
-  
+  $("#sign-up").click(function () {
+
     $("#modelSign").modal("show");
   })
 </script>
