@@ -47,15 +47,15 @@ module.exports = function(app) {
     });
   });
   // Create a new things
-  app.post("/api/things", function(req, res) {
-    db.Thing.create({
-      category: req.body.category,
-      thing: req.body.thing
-    }).then(function(dbthing) {
-      res.json(dbthing);
-      console.log(dbthing);
-    });
-  });
+  // app.post("/api/things", function(req, res) {
+  //   db.Thing.create({
+  //     category: req.body.category,
+  //     thing: req.body.thing
+  //   }).then(function(dbthing) {
+  //     res.json(dbthing);
+  //     console.log(dbthing);
+  //   });
+  // });
 
   // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
@@ -63,4 +63,40 @@ module.exports = function(app) {
   //     res.json(dbExample);
   //   });
   // });
+
+  app.post("/api/things", function(req, res) {
+    db.Thing.create({
+      category: req.body.category,
+      thing: req.body.thing
+    }).then(function(dbthing) {
+      console.log("thing ID Below");
+      console.log(dbthing.id);
+      db.User.findOne({ where: { id: req.body.usernumber } }).then(function(
+        result
+      ) {
+        console.log("Result Below");
+        var curFavs = [];
+        var curFavs = result.favorites;
+        curFavs.push(dbthing.id);
+
+        console.log(curFavs);
+        setTimeout(function() {}, 5000);
+
+        db.User.update(
+          {
+            favorites: curFavs
+          },
+          {
+            where: {
+              id: result.id
+            }
+          }
+        ).then(function(dbu) {
+          res.json(dbu);
+        });
+      });
+
+      // console.log(dbthing);
+    });
+  });
 };

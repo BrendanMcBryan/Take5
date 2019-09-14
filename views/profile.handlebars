@@ -19,7 +19,7 @@
     <div class="container" style="padding-top: 2rem">
         <div class="row">
             <div class="col-4">
-                <div class="card text-white bg-danger">
+                <div class="card text-white bg-info">
                     <h2 class="card-header" id="list-form">New Top 5 List</h2>
                     <div class="card-body">
                         <form action="" id="form-list">
@@ -60,14 +60,14 @@
 
 
             <div class="col-4">
-                <div class="card text-white bg-primary">
+                <div class="card text-white bg-info">
                     <h2 class="card-header">Favorites</h2>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12" id="favsCol">
                                 <div class="card text-dark">
                                     <h4 class="card-header text-dark">Cars</h4>
-                                    <div class="card-body">{{favorites.[1]}}</div>
+                                    {{!-- <div class="card-body">{{favorites.[1]}}</div> --}}
                                     <div class="card-body">Honda•Prius•Camero•Ferrari•Van</div>
                                 </div>
                                 <hr>
@@ -86,11 +86,11 @@
                                     <div class="card-body">The Simpsons•Alf•ER•Hunter•Aeon Flux</div>
                                 </div>
 
-                                <ul id="topList">
+                                {{!-- <ul id="topList">
                                     {{#each favorites}}
                                     {{> lists/list-block}}
                                     {{/each}}
-                                </ul>
+                                </ul> --}}
 
 
                             </div>
@@ -100,32 +100,32 @@
             </div>
 
             <div class="col-4">
-                <div class="card text-white bg-success">
+                <div class="card text-white bg-info">
                     <h2 class="card-header">
                         Following </h2>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12" id="followCol">
                                 <div class="card text-dark">
-                                    <h4 class="card-header bg-warning text-dark">Cody</h4>
+                                    <h4 class="card-header bg-white text-info">Cody</h4>
                                 </div>
                                 <hr>
                                 <div class="card text-dark">
-                                    <h4 class="card-header bg-warning text-dark">Stephanie</h4>
+                                    <h4 class="card-header bg-white text-info">Stephanie</h4>
                                 </div>
                                 <hr>
                                 <div class="card text-dark">
-                                    <h4 class="card-header bg-warning text-dark">David</h4>
+                                    <h4 class="card-header bg-white text-info">David</h4>
                                 </div>
                                 <hr>
                                 <div class="card text-dark">
-                                    <h4 class="card-header bg-warning text-dark">Jesus</h4>
+                                    <h4 class="card-header bg-white text-info">Jesus</h4>
                                 </div>
                                 <hr>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
 
             </div>
 
